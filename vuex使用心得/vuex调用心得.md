@@ -3,6 +3,7 @@
 1.  普通调用
 
     1. 没有模块化的调用方式
+
     ```
     // 调用mutations中的函数
 
@@ -17,6 +18,7 @@
     this.$store.dispatch('函数名称')
     ```
     2. 模块化后的调用
+
      ```
     // 调用模块中的mutations中的函数
 
@@ -34,6 +36,7 @@
 2. 快捷调用方法
 
    1. getters方法 
+
    ```
    import { mapGetters } from 'vuex'
 
@@ -50,6 +53,7 @@
    }
    ```
    2. matutions方法
+
    ```
    import { mapMutations } from 'vuex'
 
@@ -69,6 +73,7 @@
    }
    ```
    3. actions方法
+
       ```
       import { mapActions } from 'vuex'
 
@@ -88,6 +93,7 @@
       }
       ```
       4. 调用模块（mudule）分块后的store
+      
       ```
       // 模块分化例子
       export default new Vuex.Store({
