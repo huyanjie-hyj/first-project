@@ -6,11 +6,11 @@
    ```
    // 箭头函数
    () => {
-       console.log(this) => windows
+       console.log(this) // windows
    }
    // 普通函数
    function() {
-       console.log(this) => windows
+       console.log(this) // windows
    }
    ```
 
@@ -27,8 +27,8 @@
        funA: a,
        funB: b
    }
-   c.funA() => windwos
-   c.funB() => {funA: a, funB: b}
+   c.funA() // windwos
+   c.funB() // {funA: a, funB: b}
    ```
 
    3. 在一个函数中编写箭头函数以及普通函数
@@ -40,8 +40,8 @@
        function c () {
            console.log(this)
        }
-       b() => windows
-       c() => windows
+       b() // windows
+       c() // windows
    }
    a()
 
@@ -50,8 +50,8 @@
        funA: a
    }
    d.funA()
-   => {funA: a}
-   => windows
+   // {funA: a}
+   // windows
 
    // 箭头函数如果是通过调用的方式存在函数中，this的指向也不同
    let b = () => {
@@ -68,8 +68,8 @@
        funA : a
    }
    d.funA()
-   => windows
-   => windows
+   // windows
+   // windows
    ```
    从上边的例子可以看出箭头函数的this指向和上下文有关。
    
