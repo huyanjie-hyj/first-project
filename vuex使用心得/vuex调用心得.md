@@ -17,7 +17,7 @@
    
        this.$store.dispatch('函数名称')
        ```
-
+       
     2. 模块化后的调用
 
        ```
@@ -36,7 +36,7 @@
 
 2. 快捷调用方法
 
-   1. getters方法 
+    1. getters方法 
 
       ```
       import { mapGetters } from 'vuex'
@@ -53,7 +53,7 @@
         }
       }
       ```
-   2. matutions方法
+    2. matutions方法
 
       ```
       import { mapMutations } from 'vuex'
@@ -73,7 +73,7 @@
         }
       }
       ```
-   3. actions方法
+    3. actions方法
 
       ```
       import { mapActions } from 'vuex'
@@ -93,44 +93,41 @@
         }
       }
       ```
-   4. 调用模块（mudule）分块后的store
+    4. 调用模块（mudule）分块后的store
    
-       ```
-       // 模块分化例子
-       export default new Vuex.Store({
-           modules: {
-           a: ModuleA,
-           b: moduleB
-           }
-       }
-
-       // 调用muduleA中名为add的mutations,例1
-       import { mapMutations } from 'vuex'
-
-       export default {
-           // ...
-           methods: {
-           ...mapMutations('a',[
-           'add'  // 将 `this.add()` 映射为 `this.   $store.commit('a/add')`
-           ]),
-           ...mapMutations('a',{
-               increment: 'add' // 将 `this.increment()` 映射为 `this.   $store.commit('a/add')`
-           })
-           }
-       }
-       // 调用muduleA中名为add的mutations,例2
-       import { createNamespacedHelpers } from 'vuex'
-
-       const { mapMutations } = createNamespacedHelpers('a')
-       export default {
-           // ...
-           methods: {
-           ...mapMutations([
-               'add', // 将 `this.add()` 映射为 `this.   $store.commit('a/add')`
-           ]),
-           ...mapMutations({
-               increment: 'add' // 将 `this.increment()` 映射为 `this.   $store.commit('a/add')`
-           })
-           }
-       }
-       ```
+     ```
+     // 模块分化例子
+     export default new Vuex.Store({
+         modules: {
+         a: ModuleA,
+         b: moduleB
+         }
+     }    
+     // 调用muduleA中名为add的mutations,例1
+     import { mapMutations } from 'vuex'    
+     export default {
+         // ...
+         methods: {
+         ...mapMutations('a',[
+         'add'  // 将 `this.add()` 映射为 `this.   $store.commit('a/add')`
+         ]),
+         ...mapMutations('a',{
+             increment: 'add' // 将 `this.increment()` 映射为 `this.   $store.commit('a/add')`
+         })
+         }
+     }
+     // 调用muduleA中名为add的mutations,例2
+     import { createNamespacedHelpers } from 'vuex'    
+     const { mapMutations } = createNamespacedHelpers('a')
+     export default {
+         // ...
+         methods: {
+         ...mapMutations([
+             'add', // 将 `this.add()` 映射为 `this.   $store.commit('a/add')`
+         ]),
+         ...mapMutations({
+             increment: 'add' // 将 `this.increment()` 映射为 `this.   $store.commit('a/add')`
+         })
+         }
+     }
+     ```
